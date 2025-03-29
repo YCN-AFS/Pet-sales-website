@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giỏ Hàng - FoxCode</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="FoxCode Logo">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Trang chủ</a>
+                <a href="pets.html">Thú cưng</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Liên hệ</a>
+                <a href="cart.html" class="cart-icon active">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cart Section -->
+    <section class="cart-section">
+        <div class="container">
+            <h1>Giỏ hàng</h1>
+            
+            <div class="cart-content">
+                <!-- Cart Items -->
+                <div class="cart-items">
+                    <div class="cart-header">
+                        <h2>Sản phẩm</h2>
+                        <h2>Giá</h2>
+                        <h2>Số lượng</h2>
+                        <h2>Tổng</h2>
+                        <h2></h2>
+                    </div>
+                    <div class="cart-items-list">
+                        <!-- Cart items will be dynamically loaded -->
+                    </div>
+                </div>
+
+                <!-- Cart Summary -->
+                <div class="cart-summary">
+                    <h2>Tổng đơn hàng</h2>
+                    <div class="summary-item">
+                        <span>Tạm tính</span>
+                        <span id="subtotal">0đ</span>
+                    </div>
+                    <div class="summary-item">
+                        <span>Phí vận chuyển</span>
+                        <span id="shipping">0đ</span>
+                    </div>
+                    <div class="summary-item total">
+                        <span>Tổng cộng</span>
+                        <span id="total">0đ</span>
+                    </div>
+
+                    <!-- Delivery Options -->
+                    <div class="delivery-options">
+                        <h3>Phương thức nhận hàng</h3>
+                        <div class="option-group">
+                            <label class="radio-label">
+                                <input type="radio" name="delivery" value="store" checked>
+                                <span>Nhận tại cửa hàng</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="delivery" value="home">
+                                <span>Giao hàng tận nơi</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Payment Options -->
+                    <div class="payment-options">
+                        <h3>Phương thức thanh toán</h3>
+                        <div class="option-group">
+                            <label class="radio-label">
+                                <input type="radio" name="payment" value="cash" checked>
+                                <span>Tiền mặt</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payment" value="bank">
+                                <span>Chuyển khoản</span>
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payment" value="installment">
+                                <span>Trả góp</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Delivery Address -->
+                    <div class="delivery-address" style="display: none;">
+                        <h3>Địa chỉ giao hàng</h3>
+                        <form id="address-form">
+                            <div class="form-group">
+                                <label for="fullname">Họ và tên</label>
+                                <input type="text" id="fullname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Địa chỉ</label>
+                                <textarea id="address" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="note">Ghi chú</label>
+                                <textarea id="note"></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Checkout Button -->
+                    <button class="checkout-btn" id="checkout-btn">
+                        Tiến hành thanh toán
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về FoxCode</h3>
+                <p>Chuyên cung cấp thú cưng chất lượng cao, đặc biệt là các loài cáo được chăm sóc kỹ lưỡng.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liên kết nhanh</h3>
+                <ul>
+                    <li><a href="pets.html">Thú cưng</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Liên hệ</h3>
+                <p>Email: info@foxcode.com</p>
+                <p>Điện thoại: (84) 123-456-789</p>
+                <p>Địa chỉ: 123 Đường ABC, Quận 1, TP.HCM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Theo dõi chúng tôi</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FoxCode. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html> 

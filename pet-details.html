@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Thú Cưng - FoxCode</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo.png" alt="FoxCode Logo">
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Trang chủ</a>
+                <a href="pets.html" class="active">Thú cưng</a>
+                <a href="blog.html">Blog</a>
+                <a href="contact.html">Liên hệ</a>
+                <a href="cart.html" class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Pet Details Section -->
+    <section class="pet-details">
+        <div class="container">
+            <div class="pet-details-content">
+                <!-- Image Gallery -->
+                <div class="pet-gallery">
+                    <div class="main-image">
+                        <img src="" alt="" id="main-image">
+                    </div>
+                    <div class="thumbnail-list">
+                        <!-- Thumbnails will be dynamically loaded -->
+                    </div>
+                </div>
+
+                <!-- Pet Information -->
+                <div class="pet-info">
+                    <h1 id="pet-name"></h1>
+                    <div class="pet-price">
+                        <span class="price" id="pet-price"></span>
+                        <span class="original-price" id="original-price"></span>
+                    </div>
+                    
+                    <div class="pet-meta">
+                        <div class="meta-item">
+                            <i class="fas fa-birthday-cake"></i>
+                            <span id="pet-age"></span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-venus-mars"></i>
+                            <span id="pet-gender"></span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-palette"></i>
+                            <span id="pet-color"></span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="fas fa-heart"></i>
+                            <span id="pet-health"></span>
+                        </div>
+                    </div>
+
+                    <div class="pet-description">
+                        <h3>Mô tả</h3>
+                        <p id="pet-description"></p>
+                    </div>
+
+                    <div class="pet-care">
+                        <h3>Hướng dẫn chăm sóc</h3>
+                        <ul id="care-instructions">
+                            <!-- Care instructions will be dynamically loaded -->
+                        </ul>
+                    </div>
+
+                    <div class="pet-actions">
+                        <button class="add-to-cart-btn" id="add-to-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                            Thêm vào giỏ hàng
+                        </button>
+                        <button class="buy-now-btn" id="buy-now">
+                            <i class="fas fa-bolt"></i>
+                            Mua ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Pets -->
+            <div class="related-pets">
+                <h2>Thú cưng liên quan</h2>
+                <div class="related-pets-grid">
+                    <!-- Related pets will be dynamically loaded -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Về FoxCode</h3>
+                <p>Chuyên cung cấp thú cưng chất lượng cao, đặc biệt là các loài cáo được chăm sóc kỹ lưỡng.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liên kết nhanh</h3>
+                <ul>
+                    <li><a href="pets.html">Thú cưng</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Liên hệ</h3>
+                <p>Email: info@foxcode.com</p>
+                <p>Điện thoại: (84) 123-456-789</p>
+                <p>Địa chỉ: 123 Đường ABC, Quận 1, TP.HCM</p>
+            </div>
+            <div class="footer-section">
+                <h3>Theo dõi chúng tôi</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FoxCode. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/pet-details.js"></script>
+</body>
+</html> 
