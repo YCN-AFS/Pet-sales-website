@@ -36,24 +36,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Handle FAQ interactions
     faqItems.forEach(item => {
         const question = item.querySelector('.faq-question');
-        const answer = item.querySelector('.faq-answer');
-        const icon = question.querySelector('i');
-
+        const icon = item.querySelector('.fa-chevron-down');
+        
         question.addEventListener('click', () => {
             // Close all other answers
             faqItems.forEach(otherItem => {
                 if (otherItem !== item) {
-                    otherItem.querySelector('.faq-answer').style.display = 'none';
-                    otherItem.querySelector('i').classList.remove('fa-chevron-up');
-                    otherItem.querySelector('i').classList.add('fa-chevron-down');
+                    otherItem.classList.remove('active');
+                    icon.style.transform = 'rotate(0deg)';
                 }
             });
-
+            
             // Toggle current answer
-            const isOpen = answer.style.display === 'block';
-            answer.style.display = isOpen ? 'none' : 'block';
-            icon.classList.toggle('fa-chevron-up');
-            icon.classList.toggle('fa-chevron-down');
+            item.classList.toggle('active');
+            if (item.classList.contains('active')) {
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                icon.style.transform = 'rotate(0deg)';
+            }
         });
     });
 });
@@ -101,7 +101,7 @@ function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
     notification.innerHTML = `
-        <i class="fas ${getNotificationIcon(type)}"></i>
+        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-info-circle'}"></i>
         <span>${message}</span>
     `;
 
@@ -115,18 +115,4 @@ function showNotification(message, type = 'info') {
             notification.remove();
         }, 300);
     }, 5000);
-}
-
-// Get notification icon based on type
-function getNotificationIcon(type) {
-    switch (type) {
-        case 'success':
-            return 'fa-check-circle';
-        case 'error':
-            return 'fa-exclamation-circle';
-        case 'info':
-            return 'fa-info-circle';
-        default:
-            return 'fa-info-circle';
-    }
 } 
