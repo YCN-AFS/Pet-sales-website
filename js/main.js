@@ -127,16 +127,18 @@ const testimonials = [
     {
         id: 1,
         name: 'Nguyễn Thị Huyền',
-        image: 'images/customer1.jpg',
         text: 'Tôi rất hài lòng với dịch vụ của FoxCode. Các bé cáo được chăm sóc rất tốt!'
     },
     {
         id: 2,
-        name: 'Trần Thị Hà',
-        image: 'images/customer1.jpg',
-        text: 'Đội ngũ tư vấn rất nhiệt tình và chuyên nghiệp. Cảm ơn FoxCode!'
+        name: 'Trần Văn Bình',
+        text: 'FoxCode không chỉ cung cấp thú cưng chất lượng mà còn hỗ trợ rất tốt trong việc chăm sóc và huấn luyện.'
     },
-    // Add more testimonials as needed
+    {
+        id: 3,
+        name: 'Lê Thị Cẩm',
+        text: 'Dịch vụ chăm sóc sau bán hàng của FoxCode rất tốt. Họ luôn sẵn sàng tư vấn và hỗ trợ khi tôi cần.'
+    }
 ];
 
 // Render Testimonials
@@ -146,9 +148,25 @@ function renderTestimonials() {
 
     testimonialSlider.innerHTML = testimonials.map(testimonial => `
         <div class="testimonial-card">
-            <img src="${testimonial.image}" alt="${testimonial.name}">
-            <p class="testimonial-text">${testimonial.text}</p>
-            <h4>${testimonial.name}</h4>
+            <div class="testimonial-content">
+                <p>"${testimonial.text}"</p>
+            </div>
+            <div class="testimonial-author">
+                <div class="author-avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="author-info">
+                    <h4>${testimonial.name}</h4>
+                    <p>Khách hàng thân thiết</p>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
         </div>
     `).join('');
 }
