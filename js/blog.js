@@ -1,245 +1,265 @@
-// Blog Data
+// Sample blog posts data
 const blogPosts = [
     {
         id: 1,
-        title: 'Cách chăm sóc cáo Bắc Cực',
-        excerpt: 'Hướng dẫn chi tiết về cách chăm sóc và nuôi dưỡng cáo Bắc Cực trong môi trường gia đình.',
-        image: 'images/blog/fox-care.jpg',
-        category: 'care',
-        date: '2024-03-15',
-        author: 'Dr. Nguyễn Văn A',
-        readTime: '5 phút',
+        title: "Cách chăm sóc cáo con mới sinh",
+        excerpt: "Hướng dẫn chi tiết về cách chăm sóc và nuôi dưỡng cáo con trong những ngày đầu tiên, từ việc cho ăn đến giữ ấm và vệ sinh.",
+        image: "https://cdn.pixabay.com/photo/2017/01/19/23/52/fox-1997719_1280.jpg",
+        category: "care",
+        date: "2024-03-15",
+        author: "Nguyễn Thị Lan",
+        readTime: "8 phút",
         views: 1250
     },
     {
         id: 2,
-        title: 'Huấn luyện cáo: Bắt đầu từ đâu?',
-        excerpt: 'Những bước cơ bản để huấn luyện cáo của bạn trở nên ngoan ngoãn và biết nghe lời.',
-        image: 'images/blog/fox-training.jpg',
-        category: 'training',
-        date: '2024-03-14',
-        author: 'Ths. Trần Thị B',
-        readTime: '7 phút',
+        title: "Huấn luyện cáo: Bắt đầu từ đâu?",
+        excerpt: "Tìm hiểu các bước cơ bản để huấn luyện cáo, từ việc thiết lập mối quan hệ tin cậy đến các bài tập cơ bản.",
+        image: "https://cdn.pixabay.com/photo/2016/11/21/17/18/fox-1840792_1280.jpg",
+        category: "training",
+        date: "2024-03-14",
+        author: "Trần Văn Minh",
+        readTime: "10 phút",
         views: 980
     },
     {
         id: 3,
-        title: 'Dấu hiệu bệnh thường gặp ở cáo',
-        excerpt: 'Các dấu hiệu và triệu chứng bệnh phổ biến ở cáo mà chủ nuôi cần lưu ý.',
-        image: 'images/blog/fox-health.jpg',
-        category: 'health',
-        date: '2024-03-13',
-        author: 'BS. Lê Văn C',
-        readTime: '6 phút',
-        views: 850
+        title: "Các bệnh thường gặp ở cáo và cách phòng tránh",
+        excerpt: "Tổng hợp những căn bệnh phổ biến ở cáo, dấu hiệu nhận biết và các biện pháp phòng ngừa hiệu quả.",
+        image: "https://cdn.pixabay.com/photo/2018/04/23/17/47/fox-3344517_1280.jpg",
+        category: "health",
+        date: "2024-03-13",
+        author: "Lê Thị Hương",
+        readTime: "12 phút",
+        views: 1560
     },
     {
         id: 4,
-        title: 'Mẹo chọn thức ăn cho cáo',
-        excerpt: 'Hướng dẫn chọn lựa thức ăn phù hợp và chế độ dinh dưỡng tốt nhất cho cáo.',
-        image: 'images/blog/fox-food.jpg',
-        category: 'tips',
-        date: '2024-03-12',
-        author: 'CN. Phạm Thị D',
-        readTime: '4 phút',
-        views: 720
+        title: "Mẹo chọn thức ăn phù hợp cho cáo",
+        excerpt: "Hướng dẫn chi tiết về chế độ dinh dưỡng cho cáo, từ việc chọn thức ăn đến lịch cho ăn phù hợp.",
+        image: "https://cdn.pixabay.com/photo/2019/12/19/11/58/fox-4709280_1280.jpg",
+        category: "tips",
+        date: "2024-03-12",
+        author: "Phạm Văn Tuấn",
+        readTime: "7 phút",
+        views: 890
+    },
+    {
+        id: 5,
+        title: "Cách tạo môi trường sống lý tưởng cho cáo",
+        excerpt: "Tìm hiểu cách thiết kế không gian sống phù hợp cho cáo, đảm bảo sự thoải mái và an toàn cho thú cưng.",
+        image: "https://cdn.pixabay.com/photo/2017/11/06/18/20/fox-2923720_1280.jpg",
+        category: "care",
+        date: "2024-03-11",
+        author: "Hoàng Thị Mai",
+        readTime: "9 phút",
+        views: 1120
+    },
+    {
+        id: 6,
+        title: "Huấn luyện cáo đi vệ sinh đúng chỗ",
+        excerpt: "Hướng dẫn chi tiết về cách huấn luyện cáo đi vệ sinh đúng chỗ, giúp chủ nuôi dễ dàng quản lý vệ sinh.",
+        image: "https://cdn.pixabay.com/photo/2018/04/07/18/56/fox-3294681_1280.jpg",
+        category: "training",
+        date: "2024-03-10",
+        author: "Đỗ Văn Hùng",
+        readTime: "6 phút",
+        views: 750
     }
 ];
 
-// Format Date
+// Format date to Vietnamese locale
 function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('vi-VN', options);
+    const date = new Date(dateString);
+    return date.toLocaleDateString('vi-VN', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+    });
 }
 
-// Render Blog Posts
-function renderBlogPosts(posts, container) {
-    if (!container) return;
+// Render blog posts
+function renderBlogPosts(posts = blogPosts) {
+    const blogPostsContainer = document.querySelector('.blog-posts');
+    if (!blogPostsContainer) return;
 
-    container.innerHTML = posts.map(post => `
-        <article class="blog-post" data-category="${post.category}">
+    blogPostsContainer.innerHTML = posts.map(post => `
+        <article class="blog-post">
             <div class="post-image">
                 <img src="${post.image}" alt="${post.title}">
-                <div class="post-category">${post.category}</div>
             </div>
             <div class="post-content">
-                <h3>${post.title}</h3>
-                <p>${post.excerpt}</p>
+                <span class="post-category">${post.category}</span>
+                <h3 class="post-title">${post.title}</h3>
+                <p class="post-excerpt">${post.excerpt}</p>
                 <div class="post-meta">
                     <span><i class="far fa-calendar"></i> ${formatDate(post.date)}</span>
                     <span><i class="far fa-clock"></i> ${post.readTime}</span>
                     <span><i class="far fa-eye"></i> ${post.views}</span>
                 </div>
-                <a href="blog-post.html?id=${post.id}" class="read-more">
-                    Đọc thêm
-                    <i class="fas fa-arrow-right"></i>
-                </a>
+                <a href="#" class="read-more">Đọc thêm</a>
             </div>
         </article>
     `).join('');
 }
 
-// Render Popular Posts
+// Render popular posts
 function renderPopularPosts() {
-    const popularPostsList = document.querySelector('.popular-posts-list');
-    if (!popularPostsList) return;
+    const popularPostsContainer = document.querySelector('.popular-posts');
+    if (!popularPostsContainer) return;
 
+    // Sort posts by views and get top 3
     const popularPosts = [...blogPosts]
         .sort((a, b) => b.views - a.views)
         .slice(0, 3);
 
-    popularPostsList.innerHTML = popularPosts.map(post => `
+    popularPostsContainer.innerHTML = popularPosts.map(post => `
         <div class="popular-post">
-            <img src="${post.image}" alt="${post.title}">
-            <div class="post-info">
+            <div class="popular-post-image">
+                <img src="${post.image}" alt="${post.title}">
+            </div>
+            <div class="popular-post-content">
                 <h4>${post.title}</h4>
-                <span>${formatDate(post.date)}</span>
+                <p>${formatDate(post.date)}</p>
             </div>
         </div>
     `).join('');
 }
 
-// Filter Posts by Category
+// Filter posts by category
 function filterPosts(category) {
-    const postsGrid = document.querySelector('.posts-grid');
-    if (!postsGrid) return;
-
-    const filteredPosts = category === 'all'
-        ? blogPosts
+    const filteredPosts = category === 'all' 
+        ? blogPosts 
         : blogPosts.filter(post => post.category === category);
-
-    renderBlogPosts(filteredPosts, postsGrid);
+    
+    renderBlogPosts(filteredPosts);
 }
 
-// Search Posts
+// Search posts
 function searchPosts(query) {
-    const postsGrid = document.querySelector('.posts-grid');
-    if (!postsGrid) return;
-
-    const searchResults = blogPosts.filter(post =>
+    const searchResults = blogPosts.filter(post => 
         post.title.toLowerCase().includes(query.toLowerCase()) ||
         post.excerpt.toLowerCase().includes(query.toLowerCase())
     );
-
-    renderBlogPosts(searchResults, postsGrid);
+    
+    renderBlogPosts(searchResults);
 }
 
 // Pagination
 let currentPage = 1;
 const postsPerPage = 6;
 
-function updatePagination(totalPosts) {
-    const totalPages = Math.ceil(totalPosts / postsPerPage);
-    const pagination = document.querySelector('.pagination');
-    if (!pagination) return;
+function updatePagination() {
+    const totalPages = Math.ceil(blogPosts.length / postsPerPage);
+    const pageNumbers = document.querySelector('.page-numbers');
+    
+    if (!pageNumbers) return;
 
-    let paginationHTML = `
-        <button class="page-btn" ${currentPage === 1 ? 'disabled' : ''}>
+    let paginationHTML = '';
+    
+    // Previous button
+    paginationHTML += `
+        <button class="page-btn" data-page="prev" ${currentPage === 1 ? 'disabled' : ''}>
             <i class="fas fa-chevron-left"></i>
         </button>
     `;
 
+    // Page numbers
     for (let i = 1; i <= totalPages; i++) {
-        paginationHTML += `
-            <button class="page-btn ${i === currentPage ? 'active' : ''}">${i}</button>
-        `;
+        if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+            paginationHTML += `
+                <button class="page-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">
+                    ${i}
+                </button>
+            `;
+        } else if (i === currentPage - 2 || i === currentPage + 2) {
+            paginationHTML += '<span>...</span>';
+        }
     }
 
+    // Next button
     paginationHTML += `
-        <button class="page-btn" ${currentPage === totalPages ? 'disabled' : ''}>
+        <button class="page-btn" data-page="next" ${currentPage === totalPages ? 'disabled' : ''}>
             <i class="fas fa-chevron-right"></i>
         </button>
     `;
 
-    pagination.innerHTML = paginationHTML;
-
-    // Add event listeners to pagination buttons
-    const pageButtons = pagination.querySelectorAll('.page-btn');
-    pageButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            if (button.disabled) return;
-
-            if (button.querySelector('.fa-chevron-left')) {
-                currentPage--;
-            } else if (button.querySelector('.fa-chevron-right')) {
-                currentPage++;
-            } else {
-                currentPage = parseInt(button.textContent);
-            }
-
-            const category = document.querySelector('.category-list li.active a').dataset.category;
-            filterPosts(category);
-        });
-    });
+    pageNumbers.innerHTML = paginationHTML;
 }
 
-// Newsletter Form
-const newsletterForm = document.querySelector('.newsletter-form');
-if (newsletterForm) {
-    newsletterForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const email = newsletterForm.querySelector('input[type="email"]').value;
-        
-        // Here you would typically send the email to your backend
-        console.log('Newsletter subscription:', email);
-        
-        showNotification('Cảm ơn bạn đã đăng ký nhận tin!', 'success');
-        newsletterForm.reset();
-    });
+// Newsletter subscription
+function handleNewsletterSubmit(event) {
+    event.preventDefault();
+    const email = event.target.querySelector('input[type="email"]').value;
+    
+    // Simulate newsletter subscription
+    showNotification('Cảm ơn bạn đã đăng ký nhận tin!', 'success');
+    event.target.reset();
 }
 
-// Show Notification
-function showNotification(message, type = 'success') {
+// Show notification
+function showNotification(message, type = 'info') {
     const notification = document.createElement('div');
     notification.className = `notification ${type}`;
-    notification.textContent = message;
-    
+    notification.innerHTML = `
+        <i class="fas ${type === 'success' ? 'fa-check-circle' : 'fa-info-circle'}"></i>
+        <span>${message}</span>
+    `;
+
     document.body.appendChild(notification);
-    
+
     setTimeout(() => {
-        notification.classList.add('show');
-    }, 100);
-    
-    setTimeout(() => {
-        notification.classList.remove('show');
-        setTimeout(() => {
-            notification.remove();
-        }, 300);
+        notification.classList.add('fade-out');
+        setTimeout(() => notification.remove(), 300);
     }, 3000);
 }
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    // Render initial posts
-    const postsGrid = document.querySelector('.posts-grid');
-    renderBlogPosts(blogPosts, postsGrid);
+    // Render initial content
+    renderBlogPosts();
     renderPopularPosts();
-    updatePagination(blogPosts.length);
+    updatePagination();
 
     // Category filter
-    const categoryLinks = document.querySelectorAll('.category-list a');
-    categoryLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const category = link.dataset.category;
-            
-            categoryLinks.forEach(l => l.parentElement.classList.remove('active'));
-            link.parentElement.classList.add('active');
-            
-            currentPage = 1;
-            filterPosts(category);
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            filterPosts(button.dataset.category);
         });
     });
 
     // Search functionality
-    const searchInput = document.querySelector('.blog-search input');
+    const searchInput = document.getElementById('blog-search');
     if (searchInput) {
-        let searchTimeout;
         searchInput.addEventListener('input', (e) => {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => {
-                searchPosts(e.target.value);
-            }, 300);
+            searchPosts(e.target.value);
         });
+    }
+
+    // Pagination
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('.page-btn')) {
+            const button = e.target.closest('.page-btn');
+            const page = button.dataset.page;
+
+            if (page === 'prev' && currentPage > 1) {
+                currentPage--;
+            } else if (page === 'next' && currentPage < Math.ceil(blogPosts.length / postsPerPage)) {
+                currentPage++;
+            } else if (!isNaN(page)) {
+                currentPage = parseInt(page);
+            }
+
+            updatePagination();
+        }
+    });
+
+    // Newsletter form
+    const newsletterForm = document.getElementById('newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', handleNewsletterSubmit);
     }
 }); 

@@ -36,83 +36,109 @@
         </nav>
     </header>
 
-    <!-- Blog Section -->
-    <section class="blog-section">
+    <!-- Blog Hero Section -->
+    <section class="blog-hero">
         <div class="container">
-            <h1>Blog</h1>
-            
-            <div class="blog-content">
-                <!-- Blog Categories -->
-                <div class="blog-categories">
-                    <h2>Danh mục</h2>
-                    <ul class="category-list">
-                        <li class="active">
-                            <a href="#" data-category="all">Tất cả</a>
-                        </li>
-                        <li>
-                            <a href="#" data-category="care">Chăm sóc</a>
-                        </li>
-                        <li>
-                            <a href="#" data-category="training">Huấn luyện</a>
-                        </li>
-                        <li>
-                            <a href="#" data-category="health">Sức khỏe</a>
-                        </li>
-                        <li>
-                            <a href="#" data-category="tips">Mẹo hay</a>
-                        </li>
-                    </ul>
+            <h1>Blog Chăm Sóc Thú Cưng</h1>
+            <p>Khám phá những bài viết hữu ích về cách chăm sóc và huấn luyện thú cưng</p>
+        </div>
+    </section>
+
+    <!-- Blog Content Section -->
+    <section class="blog-content">
+        <div class="container">
+            <div class="blog-layout">
+                <!-- Main Content -->
+                <div class="blog-main">
+                    <!-- Categories -->
+                    <div class="blog-categories">
+                        <button class="category-btn active" data-category="all">Tất cả</button>
+                        <button class="category-btn" data-category="care">Chăm sóc</button>
+                        <button class="category-btn" data-category="training">Huấn luyện</button>
+                        <button class="category-btn" data-category="health">Sức khỏe</button>
+                        <button class="category-btn" data-category="tips">Mẹo hay</button>
+                    </div>
 
                     <!-- Search Box -->
                     <div class="blog-search">
-                        <input type="text" placeholder="Tìm kiếm bài viết...">
-                        <button>
-                            <i class="fas fa-search"></i>
-                        </button>
+                        <input type="text" id="blog-search" placeholder="Tìm kiếm bài viết...">
+                        <button><i class="fas fa-search"></i></button>
                     </div>
 
-                    <!-- Popular Posts -->
-                    <div class="popular-posts">
-                        <h2>Bài viết phổ biến</h2>
-                        <div class="popular-posts-list">
-                            <!-- Popular posts will be dynamically loaded -->
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Blog Posts -->
-                <div class="blog-posts">
-                    <div class="posts-grid">
-                        <!-- Blog posts will be dynamically loaded -->
+                    <!-- Blog Posts Grid -->
+                    <div class="blog-posts">
+                        <!-- Posts will be dynamically loaded -->
                     </div>
 
                     <!-- Pagination -->
-                    <div class="pagination">
-                        <button class="page-btn" disabled>
+                    <div class="blog-pagination">
+                        <button class="page-btn" data-page="prev">
                             <i class="fas fa-chevron-left"></i>
                         </button>
-                        <button class="page-btn active">1</button>
-                        <button class="page-btn">2</button>
-                        <button class="page-btn">3</button>
-                        <button class="page-btn">
+                        <div class="page-numbers">
+                            <button class="page-btn active">1</button>
+                            <button class="page-btn">2</button>
+                            <button class="page-btn">3</button>
+                            <span>...</span>
+                            <button class="page-btn">5</button>
+                        </div>
+                        <button class="page-btn" data-page="next">
                             <i class="fas fa-chevron-right"></i>
                         </button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter-section">
-        <div class="container">
-            <div class="newsletter-content">
-                <h2>Đăng ký nhận tin</h2>
-                <p>Nhận những bài viết mới nhất về chăm sóc thú cưng</p>
-                <form class="newsletter-form">
-                    <input type="email" placeholder="Email của bạn" required>
-                    <button type="submit">Đăng ký</button>
-                </form>
+                <!-- Sidebar -->
+                <div class="blog-sidebar">
+                    <!-- Popular Posts -->
+                    <div class="sidebar-widget">
+                        <h3>Bài viết phổ biến</h3>
+                        <div class="popular-posts">
+                            <!-- Popular posts will be dynamically loaded -->
+                        </div>
+                    </div>
+
+                    <!-- Categories Widget -->
+                    <div class="sidebar-widget">
+                        <h3>Danh mục</h3>
+                        <ul class="category-list">
+                            <li><a href="#" data-category="care">Chăm sóc thú cưng</a></li>
+                            <li><a href="#" data-category="training">Huấn luyện</a></li>
+                            <li><a href="#" data-category="health">Sức khỏe</a></li>
+                            <li><a href="#" data-category="tips">Mẹo hay</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="sidebar-widget newsletter-widget">
+                        <h3>Đăng ký nhận tin</h3>
+                        <p>Nhận những bài viết mới nhất về chăm sóc thú cưng</p>
+                        <form id="newsletter-form">
+                            <div class="form-group">
+                                <input type="email" placeholder="Email của bạn" required>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                Đăng ký
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Tags -->
+                    <div class="sidebar-widget">
+                        <h3>Tags</h3>
+                        <div class="tag-cloud">
+                            <a href="#" class="tag">Thú cưng</a>
+                            <a href="#" class="tag">Chăm sóc</a>
+                            <a href="#" class="tag">Huấn luyện</a>
+                            <a href="#" class="tag">Sức khỏe</a>
+                            <a href="#" class="tag">Dinh dưỡng</a>
+                            <a href="#" class="tag">Vệ sinh</a>
+                            <a href="#" class="tag">Bệnh tật</a>
+                            <a href="#" class="tag">Mẹo hay</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
